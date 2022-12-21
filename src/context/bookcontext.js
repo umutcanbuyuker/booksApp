@@ -21,6 +21,15 @@ function bookReducer(state, action) {
             return state.filter((book) => book.id !== action.payload)
         case "ADD":
             return [action.payload, ...state]
+        case "UPDATE":
+            const updatableBookIndex = state.findIndex(
+                (book) => book.id === action.payload.id
+            )
+            const updatableBook = state[updatableBookIndex]
+            const updatedItem = {...updatableBook, ...action.payload.data}
+            const updatedBooks = [...state]
+            updatedBooks[updatableBookIndex] = updatedItem
+            return updatedBooks
         default:
             return state
     }

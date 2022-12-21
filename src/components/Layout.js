@@ -25,6 +25,12 @@ export default function Layout() {
                             <li className="nav-item">
                                 <Link to="/book/firsthand" className="nav-link" >First Hand Books</Link>
                             </li>
+                            <li className="nav-item">
+                                <Link to="/auth/login" className="nav-link" >Login</Link>
+                            </li>
+                            <li className="nav-item">
+                                <Link to="/auth/logout" className="nav-link" >Logout</Link>
+                            </li>
                         </ul>
                     </div>
                 </div>

@@ -5,7 +5,20 @@ import BookTable from './BookTable';
 
 export default function BookList() {
   // const [blist, setBlist] = useState([]); // Buraya global olarak blist tanımlamazsak return içerisinde blist i kullanamıyorduk. Bu sayede map fonksiyonunu return de kullanabileceğiz.
+  const user = JSON.parse(localStorage.getItem("user"))
   const bookCtx = useContext(BookContext)
+  console.log(user)
+//   const [user,setUser] = useState({
+//     "id":1,
+//     "name":"samil@abc.com",
+//     "role":"user"
+// })
+// useEffect(()=>{
+//   let text = localStorage.getItem("testJSON")
+//   let obj = JSON.parse(text)
+// },[])
+
+// const [loggedin,setLoggedin]= useState(false)
 
   useEffect(() => {
     async function getAllBooks() {
